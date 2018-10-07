@@ -163,7 +163,7 @@
                                     <a class="nav-link" href="http://conectivomx.com/contactos.php">CONTACTO <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="dorne-signin-btn">
-                                    <a class="nav-link" href="/logn_in.php"><i class="fa fa-user" aria-hidden="true"></i> Iniciar secion<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/logn_in.php"><i class="fa fa-user" aria-hidden="true"></i> Iniciar Iniciar sesión<span class="sr-only">(current)</span></a>
                                 </li>
                                 
                             </ul>
