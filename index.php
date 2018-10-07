@@ -54,6 +54,15 @@
       <link rel="stylesheet" type="text/css" href="./slick/slick.css">
       <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
       <style type="text/css">
+          html.noscroll{
+            position: fixed;
+            width: 100%;
+            top:0;
+            left: 0;
+            height: 100%;
+            overflow-y: scroll !important;
+            z-index: 10;
+         }
         html, body {
           margin: 0;
           padding: 0;
@@ -100,7 +109,9 @@
          echo 
             "<script>
                 $(document).ready(function(){
-                $('#myModal').modal('show')
+                $('#myModal').modal('show');
+                var curScrollTop = $(window).scrollTop();
+                $('html').toggleClass('noscroll').css('top', '-' + curScrollTop + 'px');
                 });
             </script>";   
         }
@@ -125,7 +136,7 @@
             <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="modal-title">Recibe Promociones Exclusivas!!!!</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <button type="button" class="close" data-dismiss="modal" onclick="">&times;</button>
             </div>
 
             <!-- Modal body -->
@@ -155,7 +166,7 @@
                       </label>
                     </div><br><br>
                     <p>Al elegir la opción Siguiente, aceptas los <a href="/terminos_uso"><b>Terminos y condiciones de uso de la información</b></a> de ConectivoMX</p>
-                    <button type="submit" class="btn btn-primary" onclick="ocultar_modal();" style="float:right;">Siguiente</button>
+                    <button type="submit" class="btn btn-primary" onclick="ocultar_modal();" style="float:left;">Siguiente</button>
                 </form>
             </div>
           </div>
