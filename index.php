@@ -115,6 +115,52 @@
     <div id="preloader">
         <div class="dorne-load"></div>
     </div>
+    
+    
+    <!-- The Modal -->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Recibe Promociones Exclusivas!!!!</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form action="/scripts_php/registrar_visitante.php" method="post">
+                    <p style="margin-top:5px;">Nombre</p>
+                    <input class="form-control form-control" type="text" style="width: 100%;" name="nombreM">
+                    <p style="margin-top:5px;">Email</p>
+                    <input class="form-control form-control" type="text" style="width: 100%;" name="correoM"><br>
+                    <select class="custom-select" name="estadosM" id="estadosM" style="width: 100%;">
+                        <option selected value="0">Estado</option>
+                    </select><br><br>
+                    
+                    <select class="custom-select" name="municipiosM" id="municipiosM" style="width: 100%;">
+                        <option selected value="0">Municipio</option>
+                    </select><br><br>
+                    <p>Deseas obtener información sobre nuestros partners?</p>
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="novedades" value="1">SI
+                      </label>
+                    </div>
+    
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="novedades" value="0">NO
+                      </label>
+                    </div><br><br>
+                    <p>Al elegir la opción Siguiente, aceptas los <a href="/terminos_uso"><b>Terminos y condiciones de uso de la información</b></a> de ConectivoMX</p>
+                    <button type="submit" class="btn btn-primary" onclick="ocultar_modal();" style="float:right;">Siguiente</button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
 	
 	<!-- ***** Search Form Area ***** -->
     <div class="dorne-search-form d-flex align-items-center">
@@ -188,51 +234,6 @@
 		</ul>
 	</div>
     <!-- ***** Final area de Slider ***** -->
-
-      <!-- The Modal -->
-      <div class="modal fade" id="myModal">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">Recibe Promociones Exclusivas!!!!</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <form action="/scripts_php/registrar_visitante.php" method="post">
-                    <p style="margin-top:5px;">Nombre</p>
-                    <input class="form-control form-control" type="text" style="width: 100%;" name="nombreM">
-                    <p style="margin-top:5px;">Email</p>
-                    <input class="form-control form-control" type="text" style="width: 100%;" name="correoM"><br>
-                    <select class="custom-select" name="estadosM" id="estadosM" style="width: 100%;">
-                        <option selected value="0">Estado</option>
-                    </select><br><br>
-                    
-                    <select class="custom-select" name="municipiosM" id="municipiosM" style="width: 100%;">
-                        <option selected value="0">Municipio</option>
-                    </select><br><br>
-                    <p>Deseas obtener información sobre nuestros partners?</p>
-                    <div class="form-check-inline">
-                      <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="novedades" value="1">SI
-                      </label>
-                    </div>
-    
-                    <div class="form-check-inline">
-                      <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="novedades" value="0">NO
-                      </label>
-                    </div><br><br>
-                    <p>Al elegir la opción Siguiente, aceptas los <a href="/terminos_uso"><b>Terminos y condiciones de uso de la información</b></a> de ConectivoMX</p>
-                    <button type="submit" class="btn btn-primary" onclick="ocultar_modal();" style="float:right;">Siguiente</button>
-                </form>
-            </div>
-          </div>
-        </div>
-      </div>
 	
 	<!-- ***** Area de busqueda ***** -->
     <section class="Buqueda" style="width:100%">
