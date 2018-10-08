@@ -26,6 +26,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>    
     <script src="js/estado_minicipios/functions.js"></script>
     <script src="js/estado_minicipios/functionsM.js"></script>
+    <script>function activarScroll(){$('html').toggleClass('noscroll');};</script>
     <!-- WhatsHelp.io widget -->
     <script type="text/javascript">
         (function () {
@@ -136,7 +137,7 @@
             <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="modal-title">Recibe Promociones Exclusivas!!!!</h4>
-              <button type="button" class="close" data-dismiss="modal" onclick="">&times;</button>
+              <button type="button" class="close" data-dismiss="modal" onclick="activarScroll();">&times;</button>
             </div>
 
             <!-- Modal body -->
