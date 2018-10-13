@@ -1,81 +1,111 @@
-<HTML>
-    <HEAD>
-        <TITLE>Iniciar sesión</TITLE>
-        <!-- Favicon -->
-        <link rel="icon" href="img/core-img/favicon.ico">
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <link href="/css/lognin.css" rel="stylesheet">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    </HEAD>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V18</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <BODY>
-        <section class="login-block">
-            <div class="container">
-            <div class="row">
-                <div class="col-md-4 login-sec">
-                    <h2 class="text-center">Inicia seción</h2>
-                    <form class="login-form">
-          <div class="form-group">
-            <label for="exampleInputEmail1" class="text-uppercase">Correo</label>
-            <input type="text" class="form-control" placeholder="">
+	<link rel="icon" type="image/png" href="img/core-img/favicon.ico"/>
 
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1" class="text-uppercase">Contraseña</label>
-            <input type="password" class="form-control" placeholder="">
-          </div>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
 
-            <div class="form-check">
-            <label class="form-check-label">
-              <input type="checkbox" class="form-check-input">
-              <small>Recuerdame</small>
-            </label>
-            <button type="submit" class="btn btn-login float-right">Entrar</button>
-          </div>
+<body style="background-color: #666666;">
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-43">
+						Inicia sesión
+					</span>
+					
+					
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Correo</span>
+					</div>
+					
+					
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="pass">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Contraseña</span>
+					</div>
 
-        </form>
-        <div class="copy-text"><a href="/registro.php">Registrate</a></div>
-                </div>
-                <div class="col-md-8 banner-sec">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                         <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                          </ol>
-                    <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" src="https://static.pexels.com/photos/33972/pexels-photo.jpg" alt="First slide">
-              <div class="carousel-caption d-none d-md-block">
-                <div class="banner-text">
-                    <h2>This is Heaven</h2>
-                </div>	
-          </div>
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="https://images.pexels.com/photos/7097/people-coffee-tea-meeting.jpg" alt="First slide">
-              <div class="carousel-caption d-none d-md-block">
-                <div class="banner-text">
-                    <h2>This is Heaven</h2>
-                </div>	
-            </div>
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="https://images.pexels.com/photos/872957/pexels-photo-872957.jpeg" alt="First slide">
-              <div class="carousel-caption d-none d-md-block">
-                <div class="banner-text">
-                    <h2>This is Heaven</h2>
-                </div>	
-            </div>
-          </div>
-                    </div>	   
+					<div class="flex-sb-m w-full p-t-3 p-b-32">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+							<label class="label-checkbox100" for="ckb1">
+								Recuerdame
+							</label>
+						</div>
 
-                </div>
-            </div>
-        </div>
-            </div>
-        </section>
-    </BODY>
-</HTML>
+						<div>
+							<a href="#" class="txt1">
+								Olvidaste tu contraseña?
+							</a>
+						</div>
+					</div>
+			
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Iniciar
+						</button>
+					</div>
+					
+					<div class="text-center p-t-46 p-b-20">
+						<span class="txt2">
+							<a href="#">o registrarse</a>
+						</span>
+					</div>
+
+					<div class="login100-form-social flex-c-m">
+						<img src="img/core-img/logoC2.png" style="width: 50%">
+						<p>
+						© 2017 Conectivo MX. Professional Advertising Company. All Rights Reserved.
+                        </p>
+					</div>
+				</form>
+
+				<div class="login100-more" style="background-image: url('images/bg-01.jpg');">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+	
+
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+	<script src="vendor/select2/select2.min.js"></script>
+
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+
+	<script src="js/main.js"></script>
+
+</body>
+</html>
