@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-12 d-md-flex align-items-center justify-content-between">
                     <div class="footer-text">
-						<img src="img/core-img/logoC2.png" style="width: 30%;height: auto; ">
+						<img src="img/core-img/logoC2.png" style="width: 25%;height: auto; ">
                         <p>
 						© 2017 Conectivo MX. Professional Advertising Company. All Rights Reserved.
                         </p>

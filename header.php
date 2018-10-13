@@ -1,3 +1,8 @@
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="dorne-load"></div>
+    </div>
+    
     <!-- ***** Search Form Area ***** -->
     <div class="dorne-search-form d-flex align-items-center">
         <div class="container">
@@ -33,7 +38,7 @@
                                     <a class="nav-link" href="index.php">INICIO <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="dorne-signin-btn">
-                                    <a class="nav-link" href="http://conectivomx.com/conocenos.php">CONOCENOS <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="conocenos.php">CONOCENOS <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="dorne-signin-btn">
                                     <a class="nav-link" href="http://conectivomx.com/eventos.php">EVENTOS <span class="sr-only">(current)</span></a>

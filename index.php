@@ -104,12 +104,7 @@
 </head>
 
 
-<body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="dorne-load"></div>
-    </div>
-    
+<body>   
     
     <!-- The Modal -->
       <div class="modal fade" id="myModal">

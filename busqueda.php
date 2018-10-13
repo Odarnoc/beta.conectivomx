@@ -44,10 +44,6 @@
     </head>
 
     <body>
-        <!-- Preloader -->
-    <div id="preloader">
-        <div class="dorne-load"></div>
-    </div>
 	
    <?php
         include 'header.php';
