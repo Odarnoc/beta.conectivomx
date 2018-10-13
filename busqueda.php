@@ -38,26 +38,8 @@
 <html lang="es">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-        <!-- Title -->
-        <title>ConectivoMX</title>
-
-        <!-- Favicon -->
-        <link rel="icon" href="img/core-img/favicon.ico">
-
-        <!-- Core Stylesheet -->
-        <link href="style.css" rel="stylesheet">
-
-        <!-- Responsive CSS -->
-        <link href="css/responsive/responsive.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/slider/slider.css">
-
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+       
+       <?php include 'estilosGenerales.php' ?>
 
     </head>
 
@@ -67,67 +49,12 @@
         <div class="dorne-load"></div>
     </div>
 	
-	<!-- ***** Search Form Area ***** -->
-    <div class="dorne-search-form d-flex align-items-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="search-close-btn" id="closeBtn">
-                        <i class="pe-7s-close-circle" aria-hidden="true"></i>
-                    </div>
-                    <form action="#" method="get">
-                        <input type="search" name="caviarSearch" id="search" placeholder="Introdusca su busqueda">
-                        <input type="submit" class="d-none" value="submit">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+   <?php
+        include 'header.php';
+    ?>
+    
 
-    <!-- ***** header area ***** -->
-    <header class="header_area" id="header" style="border-bottom: 3px solid purple;background-color:rgba(89,37,140,0.99);">
-        <div class="container-fluid h-100">
-            <div class="row h-100">
-                <div class="col-12 h-100">
-                    <nav class="h-100 navbar navbar-expand-lg"> 
-						<a class="navbar-brand" href="index.php">
-						<img class="logoInicial" src="img/core-img/logoC.png" alt="ConectivoMX">
-						</a>					
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav" aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
-                        <!-- Nav -->
-                        <div class="collapse navbar-collapse" id="dorneNav">
-                            
-                            <ul class="navbar-nav mr-auto" id="dorneMenu">
-                                <li class="dorne-signin-btn">
-                                    <a class="nav-link" href="index.php">INICIO <span class="sr-only">(current)</span></a>
-                                </li>
-								<li class="dorne-signin-btn">
-                                    <a class="nav-link" href="http://conectivomx.com/conocenos.php">CONOCENOS <span class="sr-only">(current)</span></a>
-                                </li>
-								<li class="dorne-signin-btn">
-                                    <a class="nav-link" href="http://conectivomx.com/eventos.php">EVENTOS <span class="sr-only">(current)</span></a>
-                                </li>
-								<li class="dorne-signin-btn">
-                                    <a class="nav-link" href="http://conectivomx.com/noticias.php">NOTICIAS <span class="sr-only">(current)</span></a>
-                                </li>
-								<li class="dorne-signin-btn">
-                                    <a class="nav-link" href="http://conectivomx.com/contactos.php">CONTACTO <span class="sr-only">(current)</span></a>
-                                </li>
-                                
-                            </ul>
-							<!-- Search btn -->
-                            <div class="dorne-search-btn">
-                                <a class="nav-link" id="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i> Buscar</a>
-                            </div>
-                        </div>
-						
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- ***** Header Area End ***** -->
-        <div style="width: 100%;height: 160px;"></div>
+    <div style="width: 100%;height: 160px;"></div>
         
         <!-- ***** Inicio contenido de busqueda***** -->
         
@@ -181,40 +108,10 @@
         </div>
         
         <!-- ***** Fin contenido de busqueda ***** -->
-        
-     <!-- ****** Footer Area Start ****** -->
-    <footer class="dorne-footer-area" style="background-color:black">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 d-md-flex align-items-center justify-content-between">
-                    <div class="footer-text">
-						<img src="img/core-img/logoC2.png" style="width: 30%;height: auto; ">
-                        <p>
-						© 2017 Conectivo MX. Professional Advertising Company. All Rights Reserved.
-                        </p>
-                    </div>
-                    <div class="footer-social-btns">
-                        <a href="#"><i class="fa fa-youtube" aria-haspopup="true" style=""></i></a>
-						<a href="#"><i class="fa fa-google" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
-						<a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- ****** Footer Area End ****** -->
+        <?php
+            include 'footer.php';
+            include 'scriptsGenerales.php';
+        ?>
 
-    <!-- jQuery-2.2.4 js -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap-4 js -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
-    <script src="js/others/plugins.js"></script>
-    <!-- Active JS -->
-    <script src="js/active.js"></script>
     </body>
 </html>
