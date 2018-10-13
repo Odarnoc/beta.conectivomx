@@ -35,7 +35,7 @@
 
                             <ul class="navbar-nav mr-auto" id="dorneMenu">
                                 <li class="dorne-signin-btn">
-                                    <a class="nav-link" href="index.php">INICIO <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/">INICIO <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="dorne-signin-btn">
                                     <a class="nav-link" href="conocenos.php">CONOCENOS <span class="sr-only">(current)</span></a>
