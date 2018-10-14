@@ -80,7 +80,7 @@
 					</div>
 				</form>
 
-				<div class="login100-more" style="background-image: url('img/bg-img/hero-2.jpg');">
+				<div class="login100-more" style="background-image: url('img/partners/1.jpg');">
 				</div>
 			</div>
 		</div>

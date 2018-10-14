@@ -303,31 +303,31 @@
     </div>
     <section class="center slider" style="margin-bottom:100px;">
         <div>
-            <a href="supagina1.com"><img src="http://placehold.it/350x300?text=1"></a>
+            <a href="#"><img src="img/partners/1.jpg"></a>
         </div>
         <div>
-            <a href="supagina2.com"><img src="http://placehold.it/350x300?text=2"></a>
+            <a href="#"><img src="img/partners/2.jpg"></a>
         </div>
         <div>
-            <a href="supagina3.com"><img src="http://placehold.it/350x300?text=3"></a>
+            <a href="#"><img src="img/partners/1.jpg"></a>
         </div>
         <div>
-            <a href="supagina4.com"><img src="http://placehold.it/350x300?text=4"></a>
+            <a href="#"><img src="img/partners/2.jpg"></a>
         </div>
         <div>
-            <a href="supagina5.com"><img src="http://placehold.it/350x300?text=5"></a>
+            <a href="#"><img src="img/partners/1.jpg"></a>
         </div>
         <div>
-            <a href="supagina6.com"><img src="http://placehold.it/350x300?text=6"></a>
+            <a href="#"><img src="img/partners/2.jpg"></a>
         </div>
         <div>
-            <a href="supagina7.com"><img src="http://placehold.it/350x300?text=7"></a>
+            <a href="#"><img src="img/partners/1.jpg"></a>
         </div>
         <div>
-            <a href="supagina8.com"><img src="http://placehold.it/350x300?text=8"></a>
+            <a href="#"><img src="img/partners/2.jpg"></a>
         </div>
         <div>
-            <a href="supagina9.com"><img src="http://placehold.it/350x300?text=9"></a>
+            <a href="#"><img src="img/partners/1.jpg"></a>
         </div>
     </section>
     <!-- ***** Clients Area End ***** -->
