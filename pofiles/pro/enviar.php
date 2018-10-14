@@ -1,5 +1,5 @@
 <?php
-
+/*
 
 require("../../phpmailer/class.phpmailer.php");
 require("../../phpmailer/class.smtp.php");
@@ -95,9 +95,30 @@ if($estadoEnvio){
     echo "Ocurrió un error inesperado.";
 }
 
+*/
 
-
-
+use PHPMailer\PHPMailer\PHPMailer;
+require '../../vendor/autoload.php';
+$mail = new PHPMailer;
+$mail->isSMTP();
+$mail->SMTPDebug = 2;
+$mail->Host = 'mx1.hostinger.mx';
+$mail->Port = 587;
+$mail->SMTPAuth = true;
+$mail->Username = 'info@conectivomx.com';
+$mail->Password = '12345678';
+$mail->setFrom('info@conectivomx.com', 'ConectovoMX');
+$mail->addReplyTo('reply-box@hostinger-tutorials.com', 'Your Name');
+$mail->addAddress('guty.boo69@gmail.com', 'Agustin');
+$mail->Subject = 'ConectovoMX Trabajo solicitado';
+$mail->msgHTML(file_get_contents('message.html'), __DIR__);
+$mail->AltBody = 'Hola buen dia me interesa tu trabajo';
+$mail->addAttachment('test.txt');
+if (!$mail->send()) {
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+} else {
+    echo 'Message sent!';
+}
 
 
 
