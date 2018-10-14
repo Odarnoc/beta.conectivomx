@@ -48,7 +48,7 @@ $mail->Password = $smtpClave;
 
 
 $mail->From = $email; // Email desde donde envío el correo.
-$mail->FromName = $nombre;
+$mail->FromName = $smtpUsuario;
 $mail->AddAddress($destinatario); // Esta es la dirección a donde enviamos los datos del formulario
 
 $mail->Subject = "Formulario desde el Sitio Web"; // Este es el titulo del email.
