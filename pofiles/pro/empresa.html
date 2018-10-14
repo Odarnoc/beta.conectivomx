@@ -639,39 +639,39 @@
           <div>
             <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
             <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-            <form name="sentMessage" id="contactForm" novalidate="novalidate">
+            <form action="contact_me.php" method="post">
               <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <div >
                   <label>Nombre</label>
-                  <input class="form-control" id="name" type="text" placeholder="Nombre" required="required" data-validation-required-message="Favor de ingresa tu nombre" style="width: 100%">
+                  <input class="form-control" name="name" id="name" type="text" placeholder="Nombre" required="required" data-validation-required-message="Favor de ingresa tu nombre" style="width: 100%">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                   <label>Email</label>
-                  <input class="form-control" id="email" type="email" placeholder="Correo Electronico" required="required" data-validation-required-message="Favor de ingresa tu correo electronico" style="width: 100%">
+                  <input class="form-control" name="email" id="email" type="email" placeholder="Correo Electronico" required="required" data-validation-required-message="Favor de ingresa tu correo electronico" style="width: 100%">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                   <label>Telefono</label>
-                  <input class="form-control" id="phone" type="tel" placeholder="Telefono" required="required" data-validation-required-message="Favor de ingresa tu telefono" style="width: 100%">
+                  <input class="form-control" name="phone" id="phone" type="tel" placeholder="Telefono" required="required" data-validation-required-message="Favor de ingresa tu telefono" style="width: 100%">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                   <label>Mensaje</label>
-                  <textarea class="form-control" id="message" rows="5" placeholder="Mensaje" required="required" data-validation-required-message="Favor de ingresa tu mensaje" style="width: 100%"></textarea>
+                  <textarea class="form-control" name="message" id="message" rows="5" placeholder="Mensaje" required="required" data-validation-required-message="Favor de ingresa tu mensaje" style="width: 100%"></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <br>
               <div id="success"></div>
               <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton" style="margin-left: 30%;margin-right: 30%;width: 40%">Enviar</button>
+               <input type="submit" value="Enviar" style="margin-left: 30%;margin-right: 30%;width: 40%">
               </div>
             </form>
           </div>
