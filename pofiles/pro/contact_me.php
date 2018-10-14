@@ -1,5 +1,5 @@
 <?php
-// Check for empty fields
+/* Check for empty fields
 if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['message']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
   http_response_code(500);
   exit();
@@ -26,6 +26,16 @@ if(!mail("guty.boo69@gmail.com", $subject, $body, "From: info@conectivomx.com"))
     echo $body;
     echo $header;
     
-}
+}*/
+
+ini_set( 'display_errors', 1 );
+    error_reporting( E_ALL );
+    $from = "info@conectivomx.com";
+    $to = "guty.boo69@gmail.com";
+    $subject = "Checking PHP mail";
+    $message = "PHP mail works just fine";
+    $headers = "From:" . $from;
+    mail($to,$subject,$message, $headers);
+    echo "The email message was sent.";
   
 ?>
