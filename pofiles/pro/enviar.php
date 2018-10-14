@@ -111,9 +111,9 @@ $mail->setFrom('info@conectivomx.com', 'ConectovoMX');
 $mail->addReplyTo('reply-box@hostinger-tutorials.com', 'Your Name');
 $mail->addAddress('guty.boo69@gmail.com', 'Agustin');
 $mail->Subject = 'ConectovoMX Trabajo solicitado';
-$mail->msgHTML(file_get_contents('message.html'), __DIR__);
+//$mail->msgHTML(file_get_contents('message.html'), __DIR__);
 $mail->AltBody = 'Hola buen dia me interesa tu trabajo';
-$mail->addAttachment('test.txt');
+//$mail->addAttachment('test.txt');
 if (!$mail->send()) {
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
