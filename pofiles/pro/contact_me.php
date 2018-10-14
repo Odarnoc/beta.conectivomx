@@ -21,6 +21,11 @@ if(!mail($to, $subject, $body, $header)){
     echo "no se envio";
 }else{
     echo "se envio el correo";
+    echo $to;
+    echo $subject;
+    echo $body;
+    echo $header;
+    
 }
   
 ?>
