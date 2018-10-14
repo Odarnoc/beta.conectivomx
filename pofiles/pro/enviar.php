@@ -1,8 +1,8 @@
 <?php
 
 
-require("/phpmailer/class.phpmailer.php");
-require("/phpmailer/class.smtp.php");
+require("../../phpmailer/class.phpmailer.php");
+require("../../phpmailer/class.smtp.php");
 
 // Valores enviados desde el formulario
 
