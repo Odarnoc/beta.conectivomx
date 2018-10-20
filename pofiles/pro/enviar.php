@@ -32,30 +32,20 @@ $mail->Password = '12345678';
 $mail->setFrom('no-reply@conectivomx.com', 'ConectivoMX');
 $mail->addAddress($destinatario, 'Alex');
 $mail->Subject = $asunto;
-//file_get_contents('message.html')
-$mail->msgHTML("
-<html> 
+//$mail->msgHTML(file_get_contents('message.html'), __DIR__);
+$mail->Body =  " 
+Recibiste un nuevo mensaje desde el formulario de contacto
 
-<body> 
+Informacion enviada por el usuario de la web:
 
-<h1>Recibiste un nuevo mensaje desde el formulario de contacto</h1>
+nombre: {$nombre}
 
-<p>Informacion enviada por el usuario de la web:</p>
+email: {$email}
 
-<p>nombre: {$nombre}</p>
+telefono: {$telefono}
 
-<p>email: {$email}</p>
-
-<p>telefono: {$telefono}</p>
-
-<p>mensaje: {$mensaje}</p>
-
-</body> 
-
-</html>
-
-<br />", __DIR__);
-$mail->Body =  "";
+mensaje: {$mensaje}
+";
 //$mail->addAttachment('test.txt');
 if (!$mail->send()) {
     echo 'Error de envio: ' . $mail->ErrorInfo;
