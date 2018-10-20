@@ -16,14 +16,14 @@ $asunto = "ConectivoMX contacto de  $nombre";
 $mensaje = $_POST["message"];
 
 
-//$destinatario = "conectivomxtv@gmail.com";
-$destinatario = "ant.qa3@gmail.com";
+$destinatario = "conectivomxtv@gmail.com";
+//$destinatario = "ant.qa3@gmail.com";
 
 use PHPMailer\PHPMailer\PHPMailer;
 require '../../vendor/autoload.php';
 $mail = new PHPMailer;
 $mail->isSMTP();
-$mail->SMTPDebug = 2;
+$mail->SMTPDebug = 0;
 $mail->Host = 'mx1.hostinger.mx';
 $mail->Port = 587;
 $mail->SMTPAuth = true;
