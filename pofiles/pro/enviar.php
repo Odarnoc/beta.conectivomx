@@ -96,6 +96,18 @@ if($estadoEnvio){
 }
 
 */
+$nombre = $_POST["name"];
+
+$email = $_POST["email"];
+
+$telefono = $_POST["phone"];
+
+$asunto = "ConectivoMX contacto de  $nombre";
+
+$mensaje = $_POST["message"];
+
+
+$destinatario = "guty.boo69@gmail.com";
 
 use PHPMailer\PHPMailer\PHPMailer;
 require '../../vendor/autoload.php';
@@ -105,19 +117,39 @@ $mail->SMTPDebug = 2;
 $mail->Host = 'mx1.hostinger.mx';
 $mail->Port = 587;
 $mail->SMTPAuth = true;
-$mail->Username = 'info@conectivomx.com';
+$mail->Username = 'no-reply@conectivomx.com';
 $mail->Password = '12345678';
-$mail->setFrom('info@conectivomx.com', 'ConectovoMX');
-$mail->addReplyTo('reply-box@hostinger-tutorials.com', 'Your Name');
+$mail->setFrom('no-reply@conectivomx.com', 'ConectivoMX');
 $mail->addAddress('guty.boo69@gmail.com', 'Agustin');
-$mail->Subject = 'ConectovoMX Trabajo solicitado';
+$mail->Subject = $asunto;
 //$mail->msgHTML(file_get_contents('message.html'), __DIR__);
-$mail->Body = 'Hola buen dia me interesa tu trabajo';
+$mail->Body =  "
+<html> 
+
+<body> 
+
+<h1>Recibiste un nuevo mensaje desde el formulario de contacto</h1>
+
+<p>Informacion enviada por el usuario de la web:</p>
+
+<p>nombre: {$nombre}</p>
+
+<p>email: {$email}</p>
+
+<p>telefono: {$telefono}</p>
+
+<p>mensaje: {$mensaje}</p>
+
+</body> 
+
+</html>
+
+<br />";
 //$mail->addAttachment('test.txt');
 if (!$mail->send()) {
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
+    echo 'Error de envio: ' . $mail->ErrorInfo;
 } else {
-    echo 'Message sent!';
+    echo 'Mensaje enviado';
 }
 
 
