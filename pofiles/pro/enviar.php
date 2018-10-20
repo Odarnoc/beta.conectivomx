@@ -120,7 +120,7 @@ $mail->SMTPAuth = true;
 $mail->Username = 'no-reply@conectivomx.com';
 $mail->Password = '12345678';
 $mail->setFrom('no-reply@conectivomx.com', 'ConectivoMX');
-$mail->addAddress('guty.boo69@gmail.com', 'Agustin');
+$mail->addAddress('conectivomxtv@gmail.com', 'Agustin');
 $mail->Subject = $asunto;
 //$mail->msgHTML(file_get_contents('message.html'), __DIR__);
 $mail->Body =  "
