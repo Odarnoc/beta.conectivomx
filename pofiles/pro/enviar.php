@@ -32,6 +32,7 @@ $mail->Password = '12345678';
 $mail->setFrom('no-reply@conectivomx.com', 'ConectivoMX');
 $mail->addAddress($destinatario, 'Alex');
 $mail->Subject = $asunto;
+//file_get_contents('message.html')
 $mail->msgHTML("
 <html> 
 
@@ -53,7 +54,7 @@ $mail->msgHTML("
 
 </html>
 
-<br />"), __DIR__);
+<br />", __DIR__);
 $mail->Body =  "";
 //$mail->addAttachment('test.txt');
 if (!$mail->send()) {
