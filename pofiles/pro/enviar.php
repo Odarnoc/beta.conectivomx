@@ -1,17 +1,10 @@
 <?php
-/*
-
-require("../../phpmailer/class.phpmailer.php");
-require("../../phpmailer/class.smtp.php");
-
 // Valores enviados desde el formulario
 
 if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['message']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
   die ("Es necesario completar todos los datos del formulario");
 }
 
-
-
 $nombre = $_POST["name"];
 
 $email = $_POST["email"];
@@ -23,91 +16,8 @@ $asunto = "ConectivoMX contacto de  $nombre";
 $mensaje = $_POST["message"];
 
 
-$destinatario = "guty.boo69@gmail.com";
-
-
-// Datos de la cuenta de correo utilizada para enviar vía SMTP
-$smtpHost = "mx1.hostinger.mx";  // Dominio alternativo brindado en el email de alta 
-$smtpUsuario = "info@conectivomx.com";  // Mi cuenta de correo
-$smtpClave = "12345678";  // Mi contraseña
-
-
-
-
-$mail = new PHPMailer();
-$mail->IsSMTP();
-$mail->SMTPAuth = true;
-$mail->Port = 587; 
-$mail->IsHTML(true); 
-$mail->CharSet = "utf-8";
-
-// VALORES A MODIFICAR //
-$mail->Host = $smtpHost; 
-$mail->Username = $smtpUsuario; 
-$mail->Password = $smtpClave;
-
-
-$mail->From = $email; // Email desde donde envío el correo.
-$mail->FromName = $smtpUsuario;
-$mail->AddAddress($destinatario); // Esta es la dirección a donde enviamos los datos del formulario
-
-$mail->Subject = "Formulario desde el Sitio Web"; // Este es el titulo del email.
-$mensajeHtml = nl2br($mensaje);
-$mail->Body = "
-<html> 
-
-<body> 
-
-<h1>Recibiste un nuevo mensaje desde el formulario de contacto</h1>
-
-<p>Informacion enviada por el usuario de la web:</p>
-
-<p>nombre: {$nombre}</p>
-
-<p>email: {$email}</p>
-
-<p>telefono: {$telefono}</p>
-
-<p>asunto: {$asunto}</p>
-
-<p>mensaje: {$mensaje}</p>
-
-</body> 
-
-</html>
-
-<br />"; // Texto del email en formato HTML
-$mail->AltBody = "{$mensaje} \n\n "; // Texto sin formato HTML
-// FIN - VALORES A MODIFICAR //
-
-$mail->SMTPOptions = array(
-    'ssl' => array(
-        'verify_peer' => false,
-        'verify_peer_name' => false,
-        'allow_self_signed' => true
-    )
-);
-
-$estadoEnvio = $mail->Send(); 
-if($estadoEnvio){
-    echo "El correo fue enviado correctamente.";
-} else {
-    echo "Ocurrió un error inesperado.";
-}
-
-*/
-$nombre = $_POST["name"];
-
-$email = $_POST["email"];
-
-$telefono = $_POST["phone"];
-
-$asunto = "ConectivoMX contacto de  $nombre";
-
-$mensaje = $_POST["message"];
-
-
-$destinatario = "guty.boo69@gmail.com";
+//$destinatario = "conectivomxtv@gmail.com";
+$destinatario = "ant.qa3@gmail.com";
 
 use PHPMailer\PHPMailer\PHPMailer;
 require '../../vendor/autoload.php';
@@ -120,10 +30,9 @@ $mail->SMTPAuth = true;
 $mail->Username = 'no-reply@conectivomx.com';
 $mail->Password = '12345678';
 $mail->setFrom('no-reply@conectivomx.com', 'ConectivoMX');
-$mail->addAddress('conectivomxtv@gmail.com', 'Agustin');
+$mail->addAddress($destinatario, 'Alex');
 $mail->Subject = $asunto;
-//$mail->msgHTML(file_get_contents('message.html'), __DIR__);
-$mail->Body =  "
+$mail->msgHTML("
 <html> 
 
 <body> 
@@ -144,7 +53,8 @@ $mail->Body =  "
 
 </html>
 
-<br />";
+<br />"), __DIR__);
+$mail->Body =  "";
 //$mail->addAttachment('test.txt');
 if (!$mail->send()) {
     echo 'Error de envio: ' . $mail->ErrorInfo;
