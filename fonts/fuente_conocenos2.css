@@ -1,0 +1,8 @@
+@font-face{
+    font-family: comic;
+    src: url(COMIC.ttf);
+}
+
+h3 {
+    font-family: comic;
+}
