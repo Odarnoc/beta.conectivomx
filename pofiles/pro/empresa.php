@@ -237,17 +237,6 @@ input[type="button"].btn--primary {
   color: <?php echo $colorPri ?>;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* =================================================================== 
  *
  *  Sublime v1.0 Main Stylesheet
@@ -4018,7 +4007,7 @@ footer a {
                 //vkontakte: "as", // VKontakte page name
 
                 call_to_action: "Contactanos", // Call to action
-                button_color: "#FF6550", // Color of button
+                button_color: "#00add8", // Color of button
                 position: "absolute", // Position may be 'right' or 'left'
                 order: "facebook,whatsapp,call,email", // Order of buttons
                 //order: "facebook,whatsapp,call,email,telegram,snapchat,line,vkontakte", // Order of buttons
