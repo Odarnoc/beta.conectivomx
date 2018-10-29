@@ -303,31 +303,31 @@
     </div>
     <section class="center slider" style="margin-bottom:100px;">
         <div>
-            <a href="#"><img src="img/partners/1.jpg"></a>
+            <a href="https://www.facebook.com/profile.php?id=100016148675468"><img src="img/partners/1.jpg"></a>
         </div>
         <div>
-            <a href="#"><img src="img/partners/2.jpg"></a>
+            <a href="https://www.facebook.com/profile.php?id=100016148675468"><img src="img/partners/2.jpg"></a>
         </div>
         <div>
-            <a href="#"><img src="img/partners/1.jpg"></a>
+            <a href="http://onatech.com.mx/"><img src="img/partners/4.png"></a>
         </div>
         <div>
-            <a href="#"><img src="img/partners/2.jpg"></a>
+            <a href="https://www.facebook.com/profile.php?id=100016148675468"><img src="img/partners/2.jpg"></a>
         </div>
         <div>
-            <a href="#"><img src="img/partners/1.jpg"></a>
+            <a href="https://www.facebook.com/profile.php?id=100016148675468"><img src="img/partners/1.jpg"></a>
         </div>
         <div>
-            <a href="#"><img src="img/partners/2.jpg"></a>
+            <a href="https://www.facebook.com/profile.php?id=100016148675468"><img src="img/partners/2.jpg"></a>
         </div>
         <div>
-            <a href="#"><img src="img/partners/1.jpg"></a>
+            <a href="https://www.facebook.com/profile.php?id=100016148675468"><img src="img/partners/1.jpg"></a>
         </div>
         <div>
-            <a href="#"><img src="img/partners/2.jpg"></a>
+            <a href="https://www.facebook.com/profile.php?id=100016148675468"><img src="img/partners/2.jpg"></a>
         </div>
         <div>
-            <a href="#"><img src="img/partners/1.jpg"></a>
+            <a href="https://www.facebook.com/profile.php?id=100016148675468"><img src="img/partners/1.jpg"></a>
         </div>
     </section>
     <!-- ***** Clients Area End ***** -->

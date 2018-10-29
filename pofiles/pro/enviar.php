@@ -15,22 +15,23 @@ $asunto = "ConectivoMX contacto de  $nombre";
 
 $mensaje = $_POST["message"];
 
+$para = $_POST["para"];
 
-$destinatario = "conectivomxtv@gmail.com";
+$destinatario = $_POST["destinatario"];
 //$destinatario = "ant.qa3@gmail.com";
 
 use PHPMailer\PHPMailer\PHPMailer;
 require '../../vendor/autoload.php';
 $mail = new PHPMailer;
 $mail->isSMTP();
-$mail->SMTPDebug = 0;
+$mail->SMTPDebug = 2;
 $mail->Host = 'mx1.hostinger.mx';
 $mail->Port = 587;
 $mail->SMTPAuth = true;
 $mail->Username = 'no-reply@conectivomx.com';
 $mail->Password = '12345678';
 $mail->setFrom('no-reply@conectivomx.com', 'ConectivoMX');
-$mail->addAddress($destinatario, 'Alex');
+$mail->addAddress($destinatario, $para);
 $mail->Subject = $asunto;
 //$mail->msgHTML(file_get_contents('message.html'), __DIR__);
 $mail->Body =  " 

@@ -1,3 +1,253 @@
+<?php
+include_once '../../scripts_php/conexion.php';
+
+$query="select empresas.*,estados.nombre as estado,municipios.nombre as municipio from empresas inner join estados on state=estados.id inner join municipios on city=municipios.id where empresas.id=".$_GET['empresa'];
+
+$result = mysqli_query($conexion,$query);
+$row_cnt = mysqli_num_rows($result);
+$row = mysqli_fetch_array($result);
+
+$colorPri=$row['cPrimario'];
+$colorPri2=$row['cPrimario2'];
+$colorSec=$row['cSecundario'];
+$colorTer=$row['cTerciario'];
+
+?>
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title><?php echo $row['name'] ?></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    
+    <!--Google Maps-->
+    <!--Google Maps-->
+
+    <style type="text/css">
+
+a {
+  color: <?php echo $colorPri ?>;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+ul.disc li::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: <?php echo $colorPri ?>;
+  position: absolute;
+  left: -17px;
+  top: 11px;
+  vertical-align: middle;
+}
+
+dt {
+  margin: 0;
+  color: <?php echo $colorPri ?>;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## Change Autocomplete styles in Chrome
+ * ------------------------------------------------------------------- */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: <?php echo $colorPri ?>;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.btn.btn--primary,
+button.btn--primary,
+input[type="submit"].btn--primary,
+input[type="reset"].btn--primary,
+input[type="button"].btn--primary {
+  background: <?php echo $colorPri ?>;
+  border-color: <?php echo $colorPri ?>;
+  color: #FFFFFF;
+}
+
+.stats-tabs li a:hover {
+  color: <?php echo $colorPri ?>;
+}
+
+.skill-bars li .progress {
+  background: <?php echo $colorPri ?>;
+  position: relative;
+  height: 100%;
+}
+
+.skill-bars li .progress span {
+  position: absolute;
+  right: 0;
+  top: -3.6rem;
+  display: block;
+  font-family: "Nunito Sans", sans-serif;
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  line-height: 1;
+  background: <?php echo $colorPri ?>;
+  padding: .6rem .6rem;
+  border-radius: 3px;
+}
+
+.skill-bars li .progress span::after {
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  margin-left: -5px;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-top: 5px solid <?php echo $colorPri ?>;
+  content: "";
+}
+
+.subhead {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.333;
+  text-transform: uppercase;
+  letter-spacing: .25rem;
+  color: <?php echo $colorPri ?>;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.header-nav h3 {
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: .4rem;
+  margin-bottom: 7.2rem;
+  margin-top: 1.2rem;
+  padding-right: 140px;
+  color: <?php echo $colorPri ?>;
+  position: relative;
+}
+
+.header-nav h3::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 110px;
+  background-color: <?php echo $colorPri ?>;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.header-nav__list a:hover::before {
+  color: <?php echo $colorPri ?>;
+}
+
+.header-nav__list .current a::before {
+  color: <?php echo $colorPri ?>;
+}
+
+.home-content__video .video-icon {
+  display: inline-block;
+  height: 9rem;
+  width: 9rem;
+  border-radius: 50%;
+  background-color: <?php echo $colorPri ?>;
+  background-image: url(images/icons/icon-play.svg);
+  background-repeat: no-repeat;
+  background-position: 55% center;
+  background-size: 24px 27px;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.home-content__scroll .scroll-link:hover,
+.home-content__scroll .scroll-link:focus {
+  color: <?php echo $colorPri ?>;
+}
+
+.process h4::before {
+  content: counter(ctr);
+  counter-increment: ctr;
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: <?php echo $colorPri ?>;
+  height: 48px;
+  width: 48px;
+  line-height: 48px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: -5px;
+}
+
+.item-service__icon {
+  float: left;
+  color: <?php echo $colorPri ?>;
+  font-size: 4.5rem;
+  margin-top: -1.8rem;
+}
+
+.clients a:hover,
+.clients a:focus {
+  color: <?php echo $colorPri ?>;
+}
+
+.testimonials__author {
+  margin-top: 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  color: <?php echo $colorPri ?>;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* =================================================================== 
  *
  *  Sublime v1.0 Main Stylesheet
@@ -930,8 +1180,8 @@ button.btn--primary:focus,
 input[type="submit"].btn--primary:focus,
 input[type="reset"].btn--primary:focus,
 input[type="button"].btn--primary:focus {
-  background: #6b3792;
-  border-color: #6b3792;
+  background: <?php echo $colorPri2 ?>;
+  border-color: <?php echo $colorPri2 ?>;
 }
 
 /* button modifiers
@@ -2041,7 +2291,7 @@ body.menu-is-open {
 }
 
 .home-content__video .video-link:hover .video-icon {
-  background-color: #6b3792;
+  background-color: <?php echo $colorPri2 ?>;
 }
 
 /* ------------------------------------------------------------------- 
@@ -2579,7 +2829,7 @@ html.no-csstransitions .home-content__main {
 .s-about {
   padding-top: 18rem;
   padding-bottom: 18rem;
-  background-color: #121212;
+  background-color: <?php echo $colorSec ?>;
   position: relative;
 }
 
@@ -2830,7 +3080,7 @@ html.no-csstransitions .home-content__main {
   height: 100%;
   opacity: .3;
   background-color: rgba(0, 0, 0, 0.9);
-  background-image: url(../images/pattern.jpg);
+  background-image: url(images/pattern.jpg);
   background-size: 760px 380px;
 }
 
@@ -3211,7 +3461,7 @@ html.no-csstransitions .home-content__main {
   padding-bottom: 21rem;
   text-align: center;
   position: relative;
-  background-image: url(../images/hero-bg.jpg);
+  background-image: url(images/hero-bg.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -3233,7 +3483,7 @@ html.no-csstransitions .home-content__main {
   height: 4.5rem;
   width: 4.5rem;
   background-color: transparent;
-  background-image: url(../images/icons/icon-quote.svg);
+  background-image: url(images/icons/icon-quote.svg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -3409,7 +3659,7 @@ html.no-csstransitions .home-content__main {
 .s-contact {
   padding-top: 16.2rem;
   padding-bottom: 21rem;
-  background-color: #5e3080;
+  background-color: <?php echo $colorPri ?>;
   color: rgba(255, 255, 255, 0.6);
   text-align: center;
   position: relative;
@@ -3627,7 +3877,7 @@ footer {
   padding-top: 9rem;
   padding-bottom: 6rem;
   color: rgba(255, 255, 255, 0.6);
-  background-color: #5e3080;
+  background-color: <?php echo $colorPri ?>;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
   position: relative;
@@ -3658,7 +3908,7 @@ footer a {
 
 .ss-go-top a {
   color: #FFFFFF;
-  background-color: #351b48;
+  background-color: <?php echo $colorPri1; ?>;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -3685,7 +3935,7 @@ footer a {
   display: block;
   height: 16px;
   width: 12px;
-  background-image: url(../images/icons/icon-up.svg);
+  background-image: url(images/icons/icon-up.svg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
@@ -3697,7 +3947,7 @@ footer a {
 
 .ss-go-top a:hover,
 .ss-go-top a:focus {
-  background-color: #2d173d;
+  background-color: <?php echo $colorPri2; ?>;
 }
 
 /* ------------------------------------------------------------------- 
@@ -3743,3 +3993,793 @@ footer a {
 }
 
 /*# sourceMappingURL=main.css.map */
+</style>
+
+
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="icon" href="images/icons/favicon.ico">
+
+
+</head>
+    <!-- WhatsHelp.io widget -->
+    <script type="text/javascript">
+        (function () {
+            var options = {
+                //411133719072641
+                facebook: "Onatech", // Facebook page ID
+                whatsapp: "+<?php echo $row['whats'] ?>", // WhatsApp number
+                call: "<?php echo $row['phone'] ?>", // Call phone number
+                email: "<?php echo $row['email'] ?>", // Email
+                //telegram: "jhgjh", // Telegram bot username
+                //snapchat: "kig", // Snapchat username
+                //line: "asd", // Line QR code URL
+                //vkontakte: "as", // VKontakte page name
+
+                call_to_action: "Contactanos", // Call to action
+                button_color: "#FF6550", // Color of button
+                position: "absolute", // Position may be 'right' or 'left'
+                order: "facebook,whatsapp,call,email", // Order of buttons
+                //order: "facebook,whatsapp,call,email,telegram,snapchat,line,vkontakte", // Order of buttons
+            };
+            var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+            s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+            var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        })();
+    </script>
+    <!-- /WhatsHelp.io widget -->
+
+<body id="top">
+    
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+
+        <div class="header-logo">
+            <a class="site-logo" href="index.html">
+                <span><?php echo $row['name'] ?></span></a>
+        </div> <!-- end header-logo -->
+
+        <nav class="header-nav">
+
+            <a href="#0" class="header-nav__close" title="close"><span>Cerrar</span></a>
+
+            <h3>Navegar</h3>
+
+            <div class="header-nav__content">
+                
+                <ul class="header-nav__list">
+                    <li><a class="smoothscroll"  href="#home" title="home">Inicio</a></li>
+                    <li><a class="smoothscroll"  href="#about" title="about">Conocenos</a></li>
+                    <li><a class="smoothscroll"  href="#services" title="services">Servicios</a></li>
+                    <li><a class="smoothscroll"  href="#works" title="works">Trabajos</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="contact">Contactanos</a></li>
+                </ul>
+    
+                <p><a href='<?php echo $row['page'] ?>'><?php echo $row['name'] ?></a></p>
+    
+                <ul class="header-nav__social">
+                    <li>
+                        <a href="<?php echo $row['facebook'] ?>"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $row['twitter'] ?>"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $row['youtube'] ?>"><i class="fab fa-youtube"></i></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $row['instagram'] ?>"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $row['page'] ?>"><i class="fab fa-dribbble"></i></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $row['googlePlus'] ?>"><i class="fab fa-google"></i></a>
+                    </li>
+                </ul>
+
+            </div> <!-- end header-nav__content -->
+
+        </nav> <!-- end header-nav -->
+
+        <a class="header-menu-toggle" href="#0">
+            <span class="header-menu-icon"></span>
+        </a>
+
+    </header> <!-- end s-header -->
+
+
+    <!-- home
+    ================================================== -->
+    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="../../img/bg-img/<?php echo $row['bg'] ?>" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+
+        <div class="grid-overlay">
+            <div></div>
+        </div>
+
+        <div class="home-content">
+
+            <div class="row home-content__main">
+
+                <h1>
+                 <img src="../../img/logosEmp/<?php echo $row['logo'] ?>" alt="">
+                </h1>
+
+                <h3>
+                Comparte tu Arte
+                </h3>
+
+                <div class="home-content__video">
+                    <a class="video-link" href="<?php echo $row['video'] ?>" data-lity>
+                        <span class="video-icon"></span>
+                        <span class="video-text">Ver Video</span>
+                    </a>
+                </div>
+
+                <div class="home-content__button">
+                    <a href="#about" class="smoothscroll btn btn--primary btn--large">
+                        Mas sobre nosotros
+                    </a>
+                    <a href="#contact" class="smoothscroll btn btn--large">
+                        Llamanos
+                    </a>
+                </div>
+
+            </div> <!-- end home-content__main -->
+
+            <div class="home-content__scroll">
+                <a href="#about" class="scroll-link smoothscroll">
+                    Conocenos
+                </a>
+            </div>
+
+        </div> <!-- end home-content -->
+
+        <ul class="home-social">
+            <li>
+                <a href="<?php echo $row['facebook'] ?>"><i class="fab fa-facebook"></i></a>
+            </li>
+            <li>
+                <a href="<?php echo $row['twitter'] ?>"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+                <a href="<?php echo $row['youtube'] ?>"><i class="fab fa-youtube"></i></a>
+            </li>
+            <li>
+                <a href="<?php echo $row['instagram'] ?>"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+                <a href="<?php echo $row['page'] ?>"><i class="fab fa-dribbble"></i></a>
+            </li>
+            <li>
+                <a href="<?php echo $row['googlePlus'] ?>"><i class="fab fa-google"></i></a>
+            </li>
+        </ul> <!-- end home-social -->
+
+    </section> <!-- end s-home -->
+
+
+    <!-- about
+    ================================================== -->
+    <section id="about" class="s-about target-section">
+
+        <div class="row section-header bit-narrow" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Quienes Somos</h3>
+                <h1 class="display-1">
+                <?php echo $row['conocenos'] ?>
+                </h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row bit-narrow" data-aos="fade-up">
+            <div class="col-full">
+                <p class="lead">
+                Filosofía 
+                </p>
+            </div>
+        </div> <!-- end about-desc -->
+
+        <div class="row bit-narrow">
+                
+            <div class="about-process process block-1-2 block-tab-full">
+
+                <div class="col-block item-process" data-aos="fade-up">
+                    <div class="item-process__text">
+                        <h4 class="item-title"><?php echo $row['serviciot1'] ?></h4>
+                        <p>
+                        <?php echo $row['servicio1'] ?>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-block item-process" data-aos="fade-up">
+                    <div class="item-process__text">
+                        <h4 class="item-title"><?php echo $row['serviciot2'] ?></h4>
+                        <p>
+                        <?php echo $row['servicio2'] ?>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-block item-process" data-aos="fade-up">
+                    <div class="item-process__text">
+                        <h4 class="item-title"><?php echo $row['serviciot3'] ?></h4>
+                        <p>
+                        <?php echo $row['servicio3'] ?>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-block item-process" data-aos="fade-up">
+                    <div class="item-process__text">
+                        <h4 class="item-title"><?php echo $row['serviciot4'] ?></h4>
+                        <p>
+                        <?php echo $row['servicio4'] ?>
+                        </p>
+                    </div>
+                </div>
+
+            </div> <!-- end process -->
+
+        </div> <!-- end row -->
+
+    </section> <!-- end s-about -->
+
+
+    <!-- services
+    ================================================== -->
+    <section id='services' class="s-services target-section darker" <?php echo $row['seccionExtra1'] ?>>
+
+        <div class="row section-header bit-narrow" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Como lo Hacemos</h3>
+                <h1 class="display-1">
+                De una manera divertida centrandonos en el trabajo de nuestros invitados.
+                </h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row bit-narrow services block-1-2 block-tab-full">
+
+            <div class="col-block item-service" data-aos="fade-up">
+                <div class="item-service__icon">
+                    <i class="icon-star"></i>
+                </div>
+                <div class="item-service__text">
+                    <h3 class="item-title">Branding Artistico</h3>
+                    <p>Creamos una comunidad de usuarios donde hacemos llegar tu arte para difundirlo y darlo a conocer de manera masiva.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-block item-service" data-aos="fade-up">
+                <div class="item-service__icon">
+                    <i class="icon-group"></i>
+                </div>
+                <div class="item-service__text">
+                    <h3 class="item-title">Programas</h3>
+                    <p>Realizamos entrevistas divertidas en donde nuestra finalidad es que nuestros usuarios conozcan tu arte de la mejor manera.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-block item-service" data-aos="fade-up">
+                <div class="item-service__icon">
+                    <i class="icon-pie-chart"></i>
+                </div>  
+                <div class="item-service__text">
+                    <h3 class="item-title">Marketing</h3>
+                    <p>Analizamos nuestro entorno para poder hacer mas ameno nuestra propuesta de valor y la tuya como artista.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-block item-service" data-aos="fade-up">
+                <div class="item-service__icon">
+                    <i class="icon-image"></i>
+                </div>
+                <div class="item-service__text">
+                    <h3 class="item-title">Eventos</h3>
+                    <p>Promocionamos los eventos mas importantes en nuestra comunidad.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-block item-service" data-aos="fade-up">
+                <div class="item-service__icon">
+                    <i class="icon-cube"></i>
+                </div>
+                <div class="item-service__text">
+                    <h3 class="item-title">Diseñon</h3>
+                    <p>Diseñamos nuestros visuales para hacer llegar el arte y cultura de forma agradable.
+                    </p>
+                </div>
+            </div>
+    
+            <div class="col-block item-service" data-aos="fade-up">
+                <div class="item-service__icon"><i class="icon-lego-block"></i></div>
+                <div class="item-service__text">
+                    <h3 class="item-title">Calendario</h3>
+                    <p>Contamos con calendario de eventos proximos de gran variedad de gustos.
+                    </p>
+                </div>
+            </div>
+
+        </div> <!-- end services -->
+        <div class="row section-header bit-narrow" data-aos="fade-up">
+            <a href="mailto:conectivomxtv@gmail.com" class="btn btn-info" style="display: block;margin-left: 30%;margin-right: 30%;">Únete</a>
+            
+        </div>
+
+    </section> <!-- end s-services -->
+
+
+    <!-- works
+    ================================================== -->
+    <section id="works" class="s-works target-section" <?php echo $row['seccionExtra2'] ?>>
+
+        <div class="row section-header has-bottom-sep narrow target-section" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Eventos Próximos</h3>
+                <h1 class="display-1">
+                Aquí podrás ver los banners de los mejores eventos.
+                </h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row masonry-wrap">
+
+            <div class="masonry">
+    
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+                            
+                        <div class="item-folio__thumb">
+                            <a href="images/portfolio/2.jpg" class="thumb-link" title="Shutterbug" data-size="1050x700">
+                                <img src="images/portfolio/1.jpg" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                Shutterbug
+                            </h3>
+                            <p class="item-folio__cat">
+                                Branding
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>Los mejores evetos en ConectivomxTv.</p>
+                        </div>
+
+                    </div>
+                </div> <!-- end masonry__brick -->
+    
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+                            
+                        <div class="item-folio__thumb">
+                            <a href="images/portfolio/2.jpg" class="thumb-link" title="Woodcraft" data-size="1050x700">
+                                <img src="images/portfolio/2.jpg" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                Woodcraft
+                            </h3>
+                            <p class="item-folio__cat">
+                                Web Design
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>Los mejores evetos en ConectivomxTv.</p>
+                        </div>
+
+                    </div>
+                </div> <!-- end masonry__brick -->
+        
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+                            
+                        <div class="item-folio__thumb">
+                            <a href="images/portfolio/3.jpg" class="thumb-link" title="The Beetle Car" data-size="1050x700">
+                                <img src="images/portfolio/3.jpg" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                The Beetle
+                            </h3>
+                            <p class="item-folio__cat">
+                                Web Development
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>Los mejores evetos en ConectivomxTv..</p>
+                        </div>
+
+                    </div>
+                </div> <!-- end masonry__brick -->
+        
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+                            
+                        <div class="item-folio__thumb">
+                            <a href="images/portfolio/4.jpg" class="thumb-link" title="Grow Green" data-size="1050x700">
+                                <img src="images/portfolio/4.jpg" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                Salad
+                            </h3>
+                            <p class="item-folio__cat">
+                                Branding
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>Los mejores evetos en ConectivomxTv.</p>
+                        </div>
+
+                    </div>
+                </div> <!-- end masonry__brick -->
+    
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+                            
+                        <div class="item-folio__thumb">
+                            <a href="images/portfolio/5.jpg" class="thumb-link" title="Guitarist" data-size="1050x700">
+                                <img src="images/portfolio/5.jpg" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                Lamp
+                            </h3>
+                            <p class="item-folio__cat">
+                                Web Design
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>Los mejores evetos en ConectivomxTv..</p>
+                        </div>
+
+                    </div>
+                </div> <!-- end masonry__brick -->
+        
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+                            
+                        <div class="item-folio__thumb">
+                            <a href="images/portfolio/6.jpg" class="thumb-link" title="Palmeira" data-size="1050x700">
+                                <img src="images/portfolio/6.jpg" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                Fuji
+                            </h3>
+                            <p class="item-folio__cat">
+                                Web Design
+                            </p>
+                        </div>
+
+                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                            <i class="icon-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>Los mejores evetos en ConectivomxTv.</p>
+                        </div>
+
+                    </div>
+                </div> <!-- end masonry__brick -->
+    
+            </div> <!-- end masonry -->
+
+        </div> <!-- end masonry-wrap -->
+
+    </section> <!-- end s-works -->
+
+
+    <!-- clients
+    ================================================== -->
+    <section id="clients" class="s-clients target-section darker" <?php echo $row['seccionExtra3'] ?>>
+
+        <div class="grid-overlay">
+            <div></div>
+        </div>
+
+        <div class="row section-header text-center narrow" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Quienes confian en nosotros</h3>
+                <h1 class="display-1">Nuestros Partners</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row clients-wrap" data-aos="fade-up">
+            <div class="col-twelve">
+                <ul class="clients">
+                    <li><a href="#0">Uber</a></li>
+                    <li><a href="#0">Spotify</a></li>
+                    <li><a href="#0">Grab</a></li>
+                    <li><a href="#0">Dropbox</a></li>
+                    <li><a href="#0">IBM</a></li>
+                    <li><a href="#0">Microsoft</a></li>
+                    <li><a href="#0">Xiaomi</a></li>
+                    <li><a href="#0">Adidas</a></li>
+                    <li><a href="#0">Mozilla</a></li>
+                    <li><a href="#0">Apple</a></li>
+                    <li><a href="#0">Google</a></li>
+                    <li><a href="#0">Asus</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </section> <!-- end s-clients -->
+
+
+    <!-- testimonies
+    ================================================== -->
+    <section class="s-testimonials" <?php echo $row['seccionExtra4'] ?>>
+
+        <div class="testimonials__icon" data-aos="fade-up"></div>
+
+        <div class="row testimonials narrow">
+
+            <div class="col-full testimonials__slider" data-aos="fade-up">
+
+                <div class="testimonials__slide">
+                    <p>Compartamos nuestra música y redes sociales para hacer crecer esta comunidad</p>
+                    <div class="testimonials__author">
+                        Alex Hernández
+                        <span>CEO, HG Management</span>
+                    </div>
+                </div> <!-- end testimonials__slide -->
+
+                <div class="testimonials__slide">
+                    <p>Muy buena idea de un espacio para hacer llegar nuestra musica en una comunidad a la cual le gusta el arte.</p>
+                    <div class="testimonials__author">
+                        Peonía
+                        <span>CEO, Peoníae</span>
+                    </div>
+                </div> <!-- end testimonials__slide -->
+
+                <div class="testimonials__slide">
+                    <p>En espera del primer programa de tv.</p>
+                    <div class="testimonials__author">
+                        Luz Michel
+                        <span> Lic. Nutrición</span>
+                    </div>
+                </div> <!-- end testimonials__slide -->
+                
+            </div> <!-- end testimonials__slider -->
+
+        </div> <!-- end testimonials -->
+
+    </section> <!-- end s-testimonials -->
+
+
+        <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Contactanos</h2>
+        <hr class="star-dark mb-5">
+        <div class="row">
+          <div>
+            <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+            <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+            <form action="enviar.php" method="post">
+              <div class="control-group">
+                <div >
+                  <label>Nombre</label>
+                  <input class="form-control" name="name" id="name" type="text" placeholder="Nombre" required="required" data-validation-required-message="Favor de ingresa tu nombre" style="width: 100%">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>Email</label>
+                  <input class="form-control" name="email" id="email" type="email" placeholder="Correo Electronico" required="required" data-validation-required-message="Favor de ingresa tu correo electronico" style="width: 100%">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>Telefono</label>
+                  <input class="form-control" name="phone" id="phone" type="tel" placeholder="Telefono" required="required" data-validation-required-message="Favor de ingresa tu telefono" style="width: 100%">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>Mensaje</label>
+                  <textarea class="form-control" name="message" id="message" rows="5" placeholder="Mensaje" required="required" data-validation-required-message="Favor de ingresa tu mensaje" style="width: 100%"></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <br>
+              <div id="success"></div>
+              <div class="form-group">
+                <input type="hidden" name="destinatario" id="destinatario" value="<?php echo $row['email'] ?>">
+                <input type="hidden" name="para" id="para" value="<?php echo $row['name'] ?>">
+               <input type="submit" value="Enviar" style="margin-left: 30%;margin-right: 30%;width: 40%">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    <!-- contact
+    ================================================== -->
+    <section id="contact" class="s-contact target-section">
+
+            <div class="grid-overlay">
+                <div></div>
+            </div>
+
+        <div class="row section-header narrow" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Mantente en Contacto</h3>
+                <h1 class="display-1">Contactanos <br> <?php echo $row['subContact'] ?></h1>
+            </div>
+        </div> <!-- end section-header -->
+
+   <!-- news
+    ================================================== -->
+  <!--Google map-->
+   
+
+    <!-- end section-map -->
+        
+        <div class="row contact-main" data-aos="fade-up">
+            <div class="col-full">
+                <p class="contact-email">
+                    <a href="mailto:#0"><?php echo $row['email'] ?></a>
+                </p>
+                <p class="contact-address" <?php echo $row['direcionvisible'] ?>>
+                <?php echo $row['address'] ?> <br>
+                <?php echo $row['municipio'] ?>, <?php echo $row['estado'] ?>
+                </p>
+                <p class="contact-numbers">
+                <?php echo $row['phone'] ?> &nbsp; <?php echo $row['phone2'] ?>
+                </p>
+                 <p class="contact-numbers">
+                <?php echo $row['phone3'] ?> &nbsp; <?php echo $row['phone4'] ?>
+                </p>
+
+                <ul class="contact-social">
+                    <li>
+                        <a href="<?php echo $row['facebook'] ?>"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $row['twitter'] ?>"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $row['youtube'] ?>"><i class="fab fa-youtube"></i></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $row['instagram'] ?>"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $row['page'] ?>"><i class="fab fa-dribbble"></i></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $row['googlePlus'] ?>"><i class="fab fa-google"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d932.7554007560445!2d-103.43832826472206!3d20.749918470807614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428af587a75b36d%3A0xb2607b929ebd97a!2sAv+Guadalajara%2C+Jalisco!5e0!3m2!1ses!2smx!4v1539557552672" width="60%" height="450" frameborder="0" style="border:0; margin-top: 50px;" allowfullscreen  <?php echo $row['direcionvisible'] ?>></iframe>
+
+    </section> <!-- end s-contact -->
+
+
+    <!-- footer
+    ================================================== -->
+    <footer>
+        <div class="row">
+            <div class="col-full ss-copyright">
+                <span>© Copyright www.conectivomx.com 2018</span> 
+                <span>Design by <a href="../../index.php">Conectivomx</a></span>
+            </div>
+        </div>
+
+        <div class="ss-go-top">
+            <a class="smoothscroll" title="Back to Top" href="#top">Volver al Inicio</a>
+        </div>
+    </footer>
+
+
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
+                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
+                    "Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
+                "Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div> <!-- end photoSwipe background -->
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+</body>

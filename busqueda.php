@@ -67,19 +67,19 @@
                     <div class="row" style="margin-bottom:30px;
                                             ">
                         <div class="col-sm-3">
-                            <img src="img/logosEmp/2.png" style="float: left; margin-top:20px;margin-bottom:20px;max-height:120px">
+                            <img src="img/logosEmp/<?php echo $row['logo'] ?>" style="float: left; margin-top:20px;margin-bottom:20px;max-height:120px">
                             <p style="margin-left: 200px;margin-top: 35px;"><?php echo $row['name']; ?></p>
                             <p style="margin-left: 200px;"><?php echo $row['estado']; ?></p>
                             <p style="margin-left: 200px;"><?php echo $row['municipio']; ?></p>
-                            <p style="margin-left: 200px;"><?php echo "Marcanos al: +". $row['phone']; ?></p>
+                            <p style="margin-left: 200px;"><?php echo "Marcanos al: ". $row['phone']; ?></p>
                         </div>
                         <div class="col-sm-5">
-                            <a href="https://api.whatsapp.com/send?phone=<?php echo $row['phone'] ?>"><img src="img/iconos/whats.png" style="float: left; margin-top:40px;margin-bottom:20px;max-height:60px"></a>
-                            <a href="tel:+<?php echo $row['phone'] ?>"><img src="img/iconos/tel.png" style="float: left; margin-top:40px;margin-bottom:20px;max-height:60px"></a>
+                            <a href="https://api.whatsapp.com/send?phone=<?php echo $row['whats'] ?>"><img src="img/iconos/whats.png" style="float: left; margin-top:40px;margin-bottom:20px;max-height:60px"></a>
+                            <a href="tel:<?php echo $row['phone'] ?>"><img src="img/iconos/tel.png" style="float: left; margin-top:40px;margin-bottom:20px;max-height:60px"></a>
                         </div>
                         <?php if($row['tipo']==1){ ?>
                         <div class="col-sm-4">
-                                <form action="/pofiles/basic/empresa.html" method="get">
+                                <form action="/pofiles/basic/empresa.php" method="get">
                                     <input type="hidden" name="empresa" value="<?php echo $row['id'] ?>">
                                     <button type="submit" class="btn dorne-btn margen-btn"> Ver mas</button>
                                 </form>
@@ -87,7 +87,7 @@
                             <?php } ?>
                         <?php if($row['tipo']==2){ ?>
                         <div class="col-sm-4">
-                                <form action="/pofiles/pro/empresa.html" method="get">
+                                <form action="/pofiles/pro/empresa.php" method="get">
                                     <input type="hidden" name="empresa" value="<?php echo $row['id'] ?>">
                                     <button type="submit" class="btn dorne-btn margen-btn"> Ver mas</button>
                                 </form>
